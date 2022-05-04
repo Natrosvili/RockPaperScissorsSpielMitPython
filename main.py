@@ -1,9 +1,10 @@
 import random
 game_over = False
-	
+
+print("\nHallo und Herzlich Wilkommen zum Rock-Paper-Scissors spiel.")
+
 while not game_over:
-    print("\nHallo und Herzlich Wilkommen zum Rock-Paper-Scissors spiel.")
-    x= input("Möchten Sie spielen?\n1. -> Ja\n2. -> Nein\nAntwort: ")
+    x= input("\nMöchten Sie spielen?\n1. -> Ja\n2. -> Nein\nAntwort: ")
     
     if x == "1" or x == "Ja" or x == "ja" or x == "JA" or x == "j" or x == "J":
         
@@ -26,3 +27,4 @@ while not game_over:
     
     elif x == "2" or x == "Nein" or x == "nein" or x == "NEIN" or x == "N" or x == "n":
         print("\nSchade! Schönnen Tag noch")
+	break
