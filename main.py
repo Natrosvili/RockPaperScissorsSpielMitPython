@@ -18,11 +18,6 @@ def score():
 
 
 
-
-    
-
-
-
 if x == "1" or x == "Ja" or x == "ja" or x == "JA" or x == "j" or x == "J":
     while not game_over:
         computer_choice = random.randint(1, 3)
@@ -32,8 +27,7 @@ if x == "1" or x == "Ja" or x == "ja" or x == "JA" or x == "j" or x == "J":
             "'2' für Paper\n"
             "'3' für Scissors: "))
             
-
-
+            
         # Hier entscheiden wir, wie viele Punkte 
         # gewonnen werden müssen, um das Spiel zu gewinnen. 
         # Beispielswiese 3.
@@ -52,7 +46,6 @@ if x == "1" or x == "Ja" or x == "ja" or x == "JA" or x == "j" or x == "J":
             user_score = user_score
             print(score())
 
-      
             
         elif user_choice == 1 and computer_choice == 2:
             print(f"\nDer Computer hat {computer_choice} gewählt. Sie haben verloren!")
@@ -80,7 +73,6 @@ if x == "1" or x == "Ja" or x == "ja" or x == "JA" or x == "j" or x == "J":
             user_score += 1
             computer_score = computer_score
             print(score())            
-
             
             
         elif user_choice == 3 and computer_choice == 1:
@@ -89,23 +81,16 @@ if x == "1" or x == "Ja" or x == "ja" or x == "JA" or x == "j" or x == "J":
             user_score = user_score
             print(score())
 
-        
+            
         elif user_choice == 3 and computer_choice == 2:
             print(f"\nder Computer hat {computer_choice} gewählt. Sie haben gewonnen!")
             user_score += 1
             computer_score = computer_score
             print(score())
-
+        
         
         elif user_choice == computer_choice:
             print("\nAusgleich!")
             computer_score = computer_score
             user_score = user_score
             print(score())            
-
-
-        
-
-
-
-
