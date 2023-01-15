@@ -1,96 +1,94 @@
 import random
-game_over = False
-user_score = 0
-computer_score = 0
+gameOver = False
+userScore = 0
+computerScore = 0
 
-print("\nHallo und Herzlich Wilkommen zum Rock-Paper-Scissors spiel.")
-x= input("\nMöchten Sie spielen?\n1. -> Ja\n2. -> Nein\nAntwort: ")
+print("\nHello and welcome to the rock-paper-scissors game.")
+requiredAnswer = input("\nWould you like to play?\n1. -> Yes\n2. -> No\nAnswer: ")
 
 
 
-if x == "2" or x == "Nein" or x == "nein" or x == "NEIN" or x == "N" or x == "n":
-    print("\nSchade! Schönnen Tag noch")
+if requiredAnswer  == "2" or requiredAnswer  == "No" or requiredAnswer  == "no" or requiredAnswer  == "NO" or requiredAnswer  == "N" or requiredAnswer  == "n":
+    print("\nHave a nice day!")
     game_over = True
 
 
 def score():
-    return f"User: {user_score}\nComputer: {computer_score}"
+    return f"User: {userScore}\nComputer: {computerScore}"
 
 
 
-if x == "1" or x == "Ja" or x == "ja" or x == "JA" or x == "j" or x == "J":
-    while not game_over:
-        computer_choice = random.randint(1, 3)
+if requiredAnswer  == "1" or requiredAnswer  == "Yes" or requiredAnswer  == "yes" or requiredAnswer  == "YES" or requiredAnswer  == "y" or requiredAnswer  == "Y":
+    while not gameOver:
+        computerChoice = random.randint(1, 3)
 
-        user_choice = int(input("\nWas wälhen Sie?\n"
-            "'1' für Rock\n"
-            "'2' für Paper\n"
-            "'3' für Scissors: "))
+        userChoice = int(input("""What do you choose?
+'1' for Rock
+'2' for Paper
+'3' for Scissors
+Answer: """))
             
             
-        # Hier entscheiden wir, wie viele Punkte 
-        # gewonnen werden müssen, um das Spiel zu gewinnen. 
-        # Beispielswiese 3.
-        
-        if user_score == 3: 
-            print("Glückwünsch! Sie haben den Computer gewonnen")
-            game_over = True 
-        elif computer_score == 3: 
-            print("Schade! der Computer hat gewonnen")
-            game_over = True
+            
+        if userScore == 3: 
+            gameOver = True 
+            print("Congrats! You win")
+        elif computerScore == 3: 
+            gameOver = True
+            print("What a shame! The computer wins")
 
 
-        if user_choice > 3 or user_choice < 1:
-            print("\nSie haben ein invalid Nummer geschrieben. Sie haben Verloren! ")
-            computer_score += 1
-            user_score = user_score
+        if userChoice > 3 or userChoice < 1:
+            print("\nYou've written an invalid number. You lose!")
+            computerScore += 1
+            userScore = userScore
             print(score())
 
             
-        elif user_choice == 1 and computer_choice == 2:
-            print(f"\nDer Computer hat {computer_choice} gewählt. Sie haben verloren!")
-            computer_score += 1
-            user_score = user_score
+        elif userChoice == 1 and computerChoice == 2:
+            print(f"\nThe computer chose {computerChoice}. You lose!")
+            computerScore += 1
+            userScore = userScore
             print(score())
 
             
-        elif user_choice == 1 and computer_choice == 3:
-            print(f"\nder Computer hat {computer_choice} gewählt. Sie haben gewonnen!")
-            user_score += 1
-            computer_score = computer_score
+        elif userChoice == 1 and computerChoice == 3:
+            print(f"\nThe computer chose {computerChoice}. You win!")
+            userScore += 1
+            computerScore = computerScore
             print(score())
 
         
-        elif user_choice == 2 and computer_choice == 3:
-            print(f"\nder Computer hat {computer_choice} gewählt. Sie haben verloren!")
-            computer_score += 1
-            user_score = user_score
+        elif userChoice == 2 and computerChoice == 3:
+            print(f"\nThe computer chose {computerChoice}. You lose!")
+            computerScore += 1
+            userScore = userScore
             print(score())
 
             
-        elif user_choice == 2 and computer_choice == 1:
-            print(f"\nder Computer hat {computer_choice} gewählt. Sie haben gewonnen!")
-            user_score += 1
-            computer_score = computer_score
+        elif userChoice == 2 and computerChoice == 1:
+            print(f"\nThe computer chose {computerChoice}. You win!")
+            userScore += 1
+            computerScore = computerScore
             print(score())            
             
             
-        elif user_choice == 3 and computer_choice == 1:
-            print(f"\nder Computer hat {computer_choice} gewählt. Sie haben verloren!")
-            computer_score += 1
-            user_score = user_score
+        elif userChoice == 3 and computerChoice == 1:
+            print(f"\nThe computer chose {computerChoice}. You lose!")
+            computerScore += 1
+            userScore = userScore
             print(score())
 
             
-        elif user_choice == 3 and computer_choice == 2:
-            print(f"\nder Computer hat {computer_choice} gewählt. Sie haben gewonnen!")
-            user_score += 1
-            computer_score = computer_score
+        elif userChoice == 3 and computerChoice == 2:
+            print(f"\nThe computer chose {computerChoice}. You win!")
+            userScore += 1
+            computerScore = computerScore
             print(score())
         
         
-        elif user_choice == computer_choice:
-            print("\nAusgleich!")
-            computer_score = computer_score
-            user_score = user_score
+        elif userChoice == computerChoice:
+            print("\nBalance!")
+            computerScore = computerScore
+            userScore = userScore
             print(score())            
